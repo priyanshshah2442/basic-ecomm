@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <style>
+        h1{
+            color: blueviolet;
+        }
+    </style> -->
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav>
+        <div id="logo"><button id="btn_plus"><img src="../images/logo.png" width="35px" height="35px"></button></div>
+        <div id="search-bar">
+            <div id="search_container"><input placeholder="Search for products, brands and more" id="search"></div><button id="search_btn"><img src="../images/search.svg"></button>
+        </div>
+        <div><button id="btn_username">Priyansh</button></div>
+        <div><button id="btn_become_seller"><a href="/register">Register a new Product</a></button></div>
+        <div><button id="btn_more">More</button></div>
+        <div><button id="btn_cart"><img src="../images/cart.svg"> Cart</button></div>
+
+    </nav>
+    <div class="outer">
+        <% for(data in result) {%>
+            <div class="box">
+                <div class="img">
+                    <img src="<%=result[data].imgurl%>" height="150px" width="150px">
+                </div>
+                <div class="description">
+                    <h4 class="brand">Brand:<%=result[data].brand%>
+                    </h4>
+                    <h5 class="name">
+                        <%=result[data].name%>
+                    </h5>
+                    <h5 class="price"> Price : Rs <%=result[data].price%>
+                    </h5>
+    
+                </div>
+                <div class="btns">
+                    <button id="add_to_cart">Add to Cart</button>
+                    <button id="buy_now">Buy Now</button>
+                </div>
+            </div>
+            <% } %>
+    </div>
+            <!-- <ul>
+                <% for(data in result) {%>
+                    <li>
+                        <div class="listitem">
+                            <div class="info">
+                                <%=result[data].name%><br>
+                                    Price : Rs <%=result[data].price%> <br>
+                                        Brand:<%=result[data].brand%>
+                            </div>
+                            <div class="img">
+                                <img src="<%=result[data].imgurl%>" height="50px" width="50px">
+                            </div>
+                        </div>
+                    </li>
+                    <% } %>
+            </ul> -->
+            <footer>
+                <div id="footer_container_1">
+                    <div>
+                        ABOUT<br><br>
+                        <ul>
+                            <li>Contact Us</li>
+                            <li>About Us</li>
+                            <li>Carrers</li>
+                            <li>Digital Stories</li>
+                            <li>Press</li>
+                            <li>Online Wholesale</li>
+                            <li>Corporate Information</li>
+                        </ul>
+                    </div>
+                    <div>
+                        Help<br><br>
+                        <ul>
+                            <li>Payments</li>
+                            <li>Shipping</li>
+                            <li>Cancellation and Returns</li>
+                            <li>FAQ</li>
+                            <li>Report Infringement</li>
+                        </ul>
+                    </div>
+                    <div>
+                        Policy<br><br>
+                        <ul>
+                            <li>Return Policy</li>
+                            <li>Terms Of Use</li>
+                            <li>Security</li>
+                            <li>Privacy</li>
+                            <li>Sitemap</li>
+                            <li>EPR Compliance</li>
+                        </ul>
+                    </div>
+                    <div>
+                        Social<br><br>
+                        <ul>
+                            <li>Facebook</li>
+                            <li>Twitter</li>
+                            <li>Youtube</li>
+                        </ul>
+                    </div>
+                </div>
+                <div>
+                    <span style="color:grey ;">Mail Us:</span><br><br>
+                    Online Shopping Limited,<br>
+                    Buildings Alyssa, Begonia &<br>
+                    Clove Embassy Tech Village,<br>
+                    Outer Ring Road, Ankhol Village,<br>
+                    Vadodara, 390019,<br>
+                    Gujarat, India
+                </div>
+                <div>
+                    <span style="color:grey ;">Registered Office Address:</span><br><br>
+                    Online Private Limited,<br>
+                    Buildings Alyssa, Begonia &<br>
+                    Clove Embassy Tech Village,<br>
+                    Outer Ring Road, Ankhol Village,<br>
+                    Vadodara, 390019,<br>
+                    Gujarat, India<br>
+                    CIN : GUJ9876543210<br>
+                    Telephone: <span style="color:rgb(91, 91, 245) ;font-weight: bold;">0265-2519876</span>
+                </div>
+            </footer>
+</body>
+
+</html>
