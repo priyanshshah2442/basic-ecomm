@@ -7,9 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./styles/register_style.css">
+    <link rel="stylesheet" href="./styles/loader.css">
 </head>
 
 <body>
+    <div class="loader"></div>
     <h1>Shopping website</h1>
     <div class="container">
         <h2>Register</h2>
@@ -30,6 +32,17 @@
             Alreday registered ?<a href="/">Login</a>
         </div>
     </div>
+    <script>
+        window.addEventListener("load", () => {
+            const loader = document.querySelector(".loader");
+
+            loader.classList.add("loader--hidden");
+
+            loader.addEventListener("transitionend", () => {
+                document.body.removeChild(loader);
+            });
+        });
+    </script>
 </body>
 
 </html>

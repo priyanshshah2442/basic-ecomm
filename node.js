@@ -38,7 +38,10 @@ app.post('/main.html',async (req, res) => {
     console.log(req.body);
     const Credentials=await conn.login(email,password);
     if (Credentials) {
-        req.session.user_id = '12345';
+        const result =JSON.parse(await conn.UserId(email));
+        req.session.user_id=result["_id"];
+        console.log(req.session.user_id);
+        // console.log(conn.UserId(email));
         res.redirect('/show');
     }
     else {
@@ -100,7 +103,9 @@ app.post('/registerUser', async (req, res) => {
         const result = JSON.parse(await conn.registerUser(email, hashedPassword));
         console.log(result);
         if (result) {
-            return res.redirect('/register');
+            // return res.redirect('/register');
+            // res.render('show');
+            return res.redirect('/');
         }
         else {
             res.redirect('/registerUser');

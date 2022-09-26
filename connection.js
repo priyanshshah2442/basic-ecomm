@@ -83,17 +83,23 @@ module.exports.showDbs = async () => {
 
     let data = await Product.find();
     let result = JSON.stringify(data);
-    console.log(result);
+    // console.log(result);
     return result;
 }
 module.exports.showUsers = async () => {
 
     let data = await User.find();
     let result = JSON.stringify(data);
+    // console.log(result);
+    return result;
+}
+module.exports.UserId = async (email) => {
+
+    let data=await User.findOne({email:email});
+    let result = JSON.stringify(data);
     console.log(result);
     return result;
 }
-
 module.exports.login=async(email,password)=>{
     let data=await User.findOne({email:email});
     const isMatch=await bcrypt.compare(password,data["password"]);

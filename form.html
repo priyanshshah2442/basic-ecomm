@@ -5,17 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./styles/register_product.css">
+    <link rel="stylesheet" href="./styles/loader.css">
 </head>
 <body>
-    <form action="form.html/" method="post" enctype="multipart/form-data">
+    <div class="loader"></div>
+  <div class="container">
+    <h1>Register your Product</h1>
+    <form action="form.html/" method="post" enctype="multipart/form-data" id="myForm">
+       <div>
         <label for="name">Name</label>
         <input id="name" name="name" placeholder="Enter product name"><br>
+       </div>
+       <div>
         <label for="price">Price</label>
         <input id="price" type="number" name="price" placeholder="Enter price"><br>
+       </div>
+     <div>
         <label for="brand">Brand</label>
         <input id="brand" name="brand" placeholder="Enter brand"><br>
-        <input id="img" type="file" name="img" accept=".jpg,.jpeg,.png">
-        <button>Submit</button>
+     </div>
+       <div>
+        <label for="img">Select Image</label>
+        <input id="img" type="file" name="img" accept=".jpg,.jpeg,.png" contextmenu="">
+       </div>
+        <button id="submit">Submit</button>
     </form>
+  </div>
+  <script>
+    window.addEventListener("load", () => {
+        const loader = document.querySelector(".loader");
+
+        loader.classList.add("loader--hidden");
+
+        loader.addEventListener("transitionend", () => {
+            document.body.removeChild(loader);
+        });
+    });
+  
+</script>
 </body>
 </html>
