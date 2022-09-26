@@ -24,13 +24,13 @@ app.use(express.static(__dirname + '/views'));
 app.use(session({ secret: 'Not a good secret' }));
 app.use(express.static("./"));
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname + '/main.html'));
+    res.sendFile(path.join(__dirname + '/index.html'));
 })
 app.post('/', (req, res) => {
     req.session.user_id = null;
     res.redirect('/');
 })
-app.post('/main.html',async (req, res) => {
+app.post('/index.html',async (req, res) => {
 
     const email = req.body.email;
     const password = req.body.password;
@@ -73,8 +73,8 @@ app.get('/success', middleware, (req, res) => {
     res.sendFile(path.join(__dirname + '/success.html'));
     // res.redirect('/register')
 })
-app.get('/main.html', (req, res) => {
-    res.sendFile(path.join(__dirname + '/main.html'));
+app.get('/index.html', (req, res) => {
+    res.sendFile(path.join(__dirname + '/index.html'));
 })
 
 app.get('/show', middleware, async (req, res) => {
